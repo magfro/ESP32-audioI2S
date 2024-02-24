@@ -210,6 +210,9 @@ public:
     int getCodec() {return m_codec;}
     const char *getCodecname() {return codecname[m_codec];}
 
+	// Moved from private to public
+    bool setSampleRate(uint32_t hz);
+
 private:
 
     #ifndef ESP_ARDUINO_VERSION_VAL
@@ -251,7 +254,6 @@ private:
     int  read_M4A_Header(uint8_t* data, size_t len);
     int  read_OGG_Header(uint8_t *data, size_t len);
     size_t process_m3u8_ID3_Header(uint8_t* packet);
-    bool setSampleRate(uint32_t hz);
     bool setBitsPerSample(int bits);
     bool setChannels(int channels);
     bool setBitrate(int br);
